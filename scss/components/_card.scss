@@ -1,0 +1,122 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+.card {
+	display: grid;
+	justify-items: center;
+	max-width: func.em(420, var.$font-size-primary);
+	margin: func.em(40, var.$font-size-primary) 0
+		func.em(60, var.$font-size-primary);
+	@include mix.border-radius(8px);
+}
+
+.card__content,
+.card__group,
+.card__block,
+.card__item {
+	display: grid;
+}
+
+.card__content {
+	padding-top: func.em(40, var.$font-size-primary);
+	margin-bottom: func.em(76, var.$font-size-primary);
+	text-align: center;
+}
+
+.card__title {
+	font-weight: var.$font-weight-200;
+}
+
+.card__subtitle {
+	margin-bottom: func.em(16, 24);
+	font-size: func.em(24, var.$font-size-primary);
+	color: var.$color-dark-blue;
+}
+
+.card__group,
+.card__block {
+	gap: func.em(24, var.$font-size-primary);
+}
+
+.card__item {
+	position: relative;
+	min-height: func.em(220, var.$font-size-primary);
+	padding: func.em(24, var.$font-size-primary);
+	background-color: var.$color-white;
+	@include mix.border-radius(8px);
+	@include mix.box-shadow(
+		0px func.em(15, var.$font-size-primary)
+			func.em(20, var.$font-size-primary) 0 rgba(0, 0, 0, 0.1)
+	);
+	overflow: hidden;
+}
+
+.card__item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: func.em(4, var.$font-size-primary);
+	background-color: transparent;
+}
+
+.card__item--supervisor::before {
+	background-color: var.$color-cyan;
+}
+
+.card__item--team-builder::before {
+	background-color: var.$color-red;
+}
+
+.card__item--karma::before {
+	background-color: var.$color-orange;
+}
+
+.card__item--calculator::before {
+	background-color: var.$color-blue;
+}
+
+.card__item-title {
+	margin-bottom: func.em(8, 20);
+}
+
+.card__item-desc {
+	font-size: func.em(13, var.$font-size-primary);
+}
+
+.card__item-image {
+	justify-self: end;
+	margin-top: auto;
+}
+
+.card__item-image img {
+	width: func.em(56, var.$font-size-primary);
+	height: func.em(56, var.$font-size-primary);
+}
+
+@media (min-width: 48em) {
+	.card {
+		max-width: func.em(1110, var.$font-size-primary);
+	}
+
+	.card__content {
+		max-width: func.em(540, var.$font-size-primary);
+		margin-bottom: func.em(60, var.$font-size-primary);
+	}
+
+	.card__title,
+	.card__subtitle {
+		font-size: func.em(36, var.$font-size-primary);
+	}
+
+	.card__subtitle {
+		margin-bottom: func.em(16, 36);
+	}
+
+	.card__group {
+		grid-template-columns: 1fr 1fr 1fr;
+		align-items: center;
+	}
+}
