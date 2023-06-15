@@ -201,6 +201,7 @@ ol {
   margin-bottom: 0.6666666667em;
   font-size: 1.6em;
   color: hsl(234, 12%, 34%);
+  line-height: 1.25;
 }
 
 .card__group,
