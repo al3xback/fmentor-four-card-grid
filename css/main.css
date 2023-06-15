@@ -178,9 +178,6 @@ ol {
   justify-items: center;
   max-width: 28em;
   margin: 2.6666666667em 0 4em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
 }
 
 .card__content,

@@ -8,7 +8,6 @@
 	max-width: func.em(420, var.$font-size-primary);
 	margin: func.em(40, var.$font-size-primary) 0
 		func.em(60, var.$font-size-primary);
-	@include mix.border-radius(8px);
 }
 
 .card__content,
