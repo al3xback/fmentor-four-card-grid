@@ -173,43 +173,45 @@ ol {
   color: hsl(212, 86%, 64%);
 }
 
-.card {
+.section {
   display: grid;
+  grid-template-rows: min-content min-content;
   justify-items: center;
   max-width: 28em;
   margin: 2.6666666667em 0 4em;
 }
 
-.card__content,
-.card__group,
-.card__block,
-.card__item {
+.section__head,
+.section__body,
+.card__list,
+.card__list-block,
+.card__list-item {
   display: grid;
 }
 
-.card__content {
+.section__head {
   padding-top: 2.6666666667em;
   margin-bottom: 5.0666666667em;
   text-align: center;
 }
 
-.card__title {
+.section__title {
   font-weight: 200;
 }
 
-.card__subtitle {
+.section__subtitle {
   margin-bottom: 0.6666666667em;
   font-size: 1.6em;
   color: hsl(234, 12%, 34%);
   line-height: 1.25;
 }
 
-.card__group,
-.card__block {
+.card__list,
+.card__list-block {
   gap: 1.6em;
 }
 
-.card__item {
+.card__list-item {
   position: relative;
   min-height: 14.6666666667em;
   padding: 1.6em;
@@ -223,7 +225,7 @@ ol {
   overflow: hidden;
 }
 
-.card__item::before {
+.card__list-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -233,56 +235,56 @@ ol {
   background-color: transparent;
 }
 
-.card__item--supervisor::before {
+.card__list-item--supervisor::before {
   background-color: hsl(180, 62%, 55%);
 }
 
-.card__item--team-builder::before {
+.card__list-item--team-builder::before {
   background-color: hsl(0, 78%, 62%);
 }
 
-.card__item--karma::before {
+.card__list-item--karma::before {
   background-color: hsl(34, 97%, 64%);
 }
 
-.card__item--calculator::before {
+.card__list-item--calculator::before {
   background-color: hsl(212, 86%, 64%);
 }
 
-.card__item-title {
+.card__title {
   margin-bottom: 0.4em;
 }
 
-.card__item-desc {
+.card__desc {
   font-size: 0.8666666667em;
 }
 
-.card__item-image {
+.card__image {
   justify-self: end;
   margin-top: auto;
 }
 
-.card__item-image img {
+.card__image img {
   width: 3.7333333333em;
   height: 3.7333333333em;
 }
 
 @media (min-width: 48em) {
-  .card {
+  .section {
     max-width: 74em;
   }
-  .card__content {
+  .section__head {
     max-width: 36em;
     margin-bottom: 4em;
   }
-  .card__title,
-  .card__subtitle {
+  .section__title,
+  .section__subtitle {
     font-size: 2.4em;
   }
-  .card__subtitle {
+  .section__subtitle {
     margin-bottom: 0.4444444444em;
   }
-  .card__group {
+  .card__list {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
   }

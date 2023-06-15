@@ -2,44 +2,46 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
 
-.card {
+.section {
 	display: grid;
+	grid-template-rows: min-content min-content;
 	justify-items: center;
 	max-width: func.em(420, var.$font-size-primary);
 	margin: func.em(40, var.$font-size-primary) 0
 		func.em(60, var.$font-size-primary);
 }
 
-.card__content,
-.card__group,
-.card__block,
-.card__item {
+.section__head,
+.section__body,
+.card__list,
+.card__list-block,
+.card__list-item {
 	display: grid;
 }
 
-.card__content {
+.section__head {
 	padding-top: func.em(40, var.$font-size-primary);
 	margin-bottom: func.em(76, var.$font-size-primary);
 	text-align: center;
 }
 
-.card__title {
+.section__title {
 	font-weight: var.$font-weight-200;
 }
 
-.card__subtitle {
+.section__subtitle {
 	margin-bottom: func.em(16, 24);
 	font-size: func.em(24, var.$font-size-primary);
 	color: var.$color-dark-blue;
 	line-height: 1.25;
 }
 
-.card__group,
-.card__block {
+.card__list,
+.card__list-block {
 	gap: func.em(24, var.$font-size-primary);
 }
 
-.card__item {
+.card__list-item {
 	position: relative;
 	min-height: func.em(220, var.$font-size-primary);
 	padding: func.em(24, var.$font-size-primary);
@@ -52,7 +54,7 @@
 	overflow: hidden;
 }
 
-.card__item::before {
+.card__list-item::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -62,60 +64,60 @@
 	background-color: transparent;
 }
 
-.card__item--supervisor::before {
+.card__list-item--supervisor::before {
 	background-color: var.$color-cyan;
 }
 
-.card__item--team-builder::before {
+.card__list-item--team-builder::before {
 	background-color: var.$color-red;
 }
 
-.card__item--karma::before {
+.card__list-item--karma::before {
 	background-color: var.$color-orange;
 }
 
-.card__item--calculator::before {
+.card__list-item--calculator::before {
 	background-color: var.$color-blue;
 }
 
-.card__item-title {
+.card__title {
 	margin-bottom: func.em(8, 20);
 }
 
-.card__item-desc {
+.card__desc {
 	font-size: func.em(13, var.$font-size-primary);
 }
 
-.card__item-image {
+.card__image {
 	justify-self: end;
 	margin-top: auto;
 }
 
-.card__item-image img {
+.card__image img {
 	width: func.em(56, var.$font-size-primary);
 	height: func.em(56, var.$font-size-primary);
 }
 
 @media (min-width: 48em) {
-	.card {
+	.section {
 		max-width: func.em(1110, var.$font-size-primary);
 	}
 
-	.card__content {
+	.section__head {
 		max-width: func.em(540, var.$font-size-primary);
 		margin-bottom: func.em(60, var.$font-size-primary);
 	}
 
-	.card__title,
-	.card__subtitle {
+	.section__title,
+	.section__subtitle {
 		font-size: func.em(36, var.$font-size-primary);
 	}
 
-	.card__subtitle {
+	.section__subtitle {
 		margin-bottom: func.em(16, 36);
 	}
 
-	.card__group {
+	.card__list {
 		grid-template-columns: 1fr 1fr 1fr;
 		align-items: center;
 	}
