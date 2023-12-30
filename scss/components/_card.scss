@@ -1,15 +1,7 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
 
-.section {
-	display: grid;
-	grid-template-rows: min-content min-content;
-	justify-items: center;
-	max-width: func.em(420, var.$font-size-primary);
-	margin: func.em(40, var.$font-size-primary) 0
-		func.em(60, var.$font-size-primary);
-}
-
+.section,
 .section__head,
 .section__body,
 .card__list,
@@ -18,9 +10,17 @@
 	display: grid;
 }
 
+.section {
+	grid-template-rows: min-content min-content;
+	justify-items: center;
+	gap: func.em(76, var.$font-size-primary);
+	max-width: func.em(420, var.$font-size-primary);
+	margin: func.em(40, var.$font-size-primary) 0
+		func.em(60, var.$font-size-primary);
+}
+
 .section__head {
 	padding-top: func.em(40, var.$font-size-primary);
-	margin-bottom: func.em(76, var.$font-size-primary);
 	text-align: center;
 }
 
@@ -97,12 +97,12 @@
 
 @media (min-width: 48em) {
 	.section {
+		gap: func.em(60, var.$font-size-primary);
 		max-width: func.em(1110, var.$font-size-primary);
 	}
 
 	.section__head {
 		max-width: func.em(540, var.$font-size-primary);
-		margin-bottom: func.em(60, var.$font-size-primary);
 	}
 
 	.section__title,
