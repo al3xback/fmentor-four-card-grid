@@ -1,7 +1,7 @@
 {
 	"name": "fmentor-four-card-grid",
 	"version": "1.0.0",
-	"description": "four card feature section with display grid",
+	"description": "four card feature section using display grid",
 	"main": "index.js",
 	"scripts": {
 		"sass-dev": "sass --watch scss/main.scss css/main.css",
