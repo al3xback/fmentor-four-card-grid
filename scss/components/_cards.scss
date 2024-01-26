@@ -8,6 +8,10 @@
 	display: grid;
 }
 
+.cards-summary {
+	text-align: center;
+}
+
 .cards-summary__title {
 	font-weight: var.$font-weight-200;
 }
@@ -81,6 +85,10 @@
 }
 
 @media (min-width: 48em) {
+	.cards-summary {
+		max-width: func.em(540, var.$font-size-primary);
+	}
+
 	.cards-summary__title,
 	.cards-summary__subtitle {
 		font-size: func.em(36, var.$font-size-primary);
