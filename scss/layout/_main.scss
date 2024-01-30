@@ -1,8 +1,9 @@
-main {
+main,
+main > .container {
 	display: grid;
 }
 
 main > .container {
-	display: grid;
-	justify-content: center;
+	justify-items: center;
+	align-items: start;
 }
